@@ -3,7 +3,7 @@
   :author "Tarn W. Burton"
   :license "MIT"
   :depends-on (:nibbles)
-  #+(or) :in-order-to ((asdf:test-op (asdf:test-op #:sha2/test)))
+  :in-order-to ((asdf:test-op (asdf:test-op #:sha2/test)))
   :components
     ((:module lisp
       :serial t
@@ -17,13 +17,13 @@
     #-asdf3 ())
 
 
-#+(or)(asdf:defsystem #:sha2/test
+(asdf:defsystem #:sha2/test
   :description "Test suite for sha2"
   :author "Tarn W. Burton"
   :license "MIT"
   :depends-on
-    (:sha2 :parachute)
-  :perform (asdf:test-op (op c) (uiop:symbol-call :parachute :test :sha2/test))
+    (:sha2 :the-cost-of-nothing :ironclad)
+  :perform (asdf:test-op (op c) (uiop:symbol-call :sha2/test :bench))
   :components
     ((:module lisp
       :components
@@ -31,5 +31,5 @@
         :serial t
         :components
           ((:file "packages")
-           (:file "test")))))))
+           (:file "bench")))))))
         

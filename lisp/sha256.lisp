@@ -8,13 +8,13 @@
   '(unsigned-byte 32))
 
 
-(defconstant +initial-hash-values+
+(defparameter +initial-hash-values+
   (make-array '(8)
               :element-type 'u32
               :initial-contents #(#x6a09e667 #xbb67ae85 #x3c6ef372 #xa54ff53a #x510e527f #x9b05688c #x1f83d9ab #x5be0cd19)))
 
 
-(defconstant +round-constants+
+(defparameter +round-constants+
   (make-array '(64)
               :element-type 'u32
               :initial-contents #(#x428a2f98 #x71374491 #xb5c0fbcf #xe9b5dba5 #x3956c25b #x59f111f1 #x923f82a4 #xab1c5ed5
